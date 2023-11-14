@@ -14,10 +14,10 @@ export class TodosComponent implements OnInit{
   ngOnInit(): void {
     this.todos = [
       {
-        content: "1st todo",
+        content: "New Task",
         completed: false
       }, {
-        content: "2nd todo",
+        content: "Competed Task",
         completed: true
       }
     ]
@@ -39,6 +39,10 @@ export class TodosComponent implements OnInit{
       completed: false
     });
     this.inputTodo = "" // word doesnt stay at form
+  }
+
+  bumpTodo () {
+    
   }
 
 }
