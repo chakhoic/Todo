@@ -1,54 +1,61 @@
-.todos {
+body {
+	font-family: 'Orbitron', sans-serif;
+	background-color: #0f0f0f; /* Almost black background */
+	color: #33ff33; /* Neon green text */
+	text-align: center;
+	margin: 0; /* Remove default margin */
+
+  }
+
+  form {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+  }
+  
+  .todos {
 	max-width: 600px;
 	margin: 40px auto;
 	padding: 20px;
-	background-color: #f9f9f9;
-	box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+	background-color: #1a1a1a; /* Dark background for the todo container */
+	border: 1px solid #33ff33; /* Neon green border */
 	border-radius: 8px;
+	box-shadow: 0 0 20px #33ff33; /* Neon green glow */
   }
   
   .todo {
 	display: flex;
 	align-items: center;
 	padding: 10px 15px;
-	background-color: #FFF;
-	border-bottom: 1px solid #DDD;
+	background-color: #262626; /* Slightly lighter black for the todo items */
+	border-bottom: 1px solid #33ff33; /* Neon green bottom border */
 	border-radius: 4px;
 	margin-bottom: 10px;
-	box-shadow: 1px 1px 5px rgba(0,0,0,0.1);
-	transition: transform 0.1s ease-in-out, box-shadow 0.1s ease-in-out;
+	transition: transform 0.1s ease-in-out;
   }
   
   .todo:hover {
 	transform: translateY(-2px);
-	box-shadow: 1px 3px 5px rgba(0,0,0,0.2);
-  }
-  
-  .todo:nth-child(even) {
-	background-color: #EEE;
-  }
-  
-  .todo:last-of-type {
-	border-bottom: 0;
-	margin-bottom: 0;
+	box-shadow: 0 0 20px #33ff33; /* Neon green glow on hover */
   }
   
   .todo .id {
 	flex: 0 0 50px;
 	text-align: center;
 	font-weight: bold;
-	color: #555;
+	color: #33ff33; /* Neon green for the id */
   }
   
   .todo .content {
 	flex: 1;
 	margin: 0 10px;
 	font-size: 18px;
-	color: #333;
+	color: #33ff33; /* White for content to enhance readability */
   }
   
   .todo.done .content {
-	color: #999;
+	color: #669966; /* Dimmed green for completed todos */
 	text-decoration: line-through;
   }
   
@@ -57,13 +64,13 @@
 	width: calc(100% - 30px);
 	padding: 10px 15px;
 	appearance: none;
-	border: none;
+	border: 1px solid #33ff33; /* Neon green border */
 	border-radius: 4px;
-	background-color: #F3F3F3;
+	background-color: #262626; /* Slightly lighter black for input */
 	margin-top: 15px;
 	font-size: 20px;
+	color: #ffffff; /* White text for input */
 	outline: none;
-	box-shadow: inset 1px 1px 3px rgba(0,0,0,0.1);
   }
   
   .todo-submit {
@@ -72,25 +79,24 @@
 	appearance: none;
 	border: none;
 	outline: none;
-	background-color: #5cb85c;
-	color: #FFF;
+	background-color: #33ff33; /* Neon green for submit button */
+	color: #0f0f0f; /* Almost black text for button */
 	margin: 15px auto;
 	padding: 10px 15px;
 	font-size: 18px;
 	font-weight: 700;
 	border-radius: 4px;
-	box-shadow: 0 2px 4px rgba(0,0,0,0.2);
 	cursor: pointer;
 	transition: background-color 0.2s ease-in-out;
   }
   
   .todo-submit:hover {
-	background-color: #4cae4c;
+	background-color: #28cc28; /* A slightly different shade of green on hover */
   }
   
   .todo .delete {
-	background-color: #d9534f;
-	color: white;
+background-color: #333; /* Dark grey to match the cyber theme */
+  color: #33ff33; /* Neon green text for the delete button */
 	border: none;
 	border-radius: 4px;
 	padding: 5px 10px;
@@ -99,20 +105,49 @@
   }
   
   .todo .delete:hover {
-	background-color: #c9302c;
+	background-color:#444;
   }
   
-  body, input, button {
-	font-family: 'Orbitron', sans-serif;
+  /* Adding a glow effect to inputs and buttons when they are focused */
+  input:focus, button:focus {
+	box-shadow: 0 0 10px #33ff33;
   }
   
-  .todo .id, .todo .content, .todo-submit {
-	font-weight: 700; /* This makes the font bold */
+  /* Additional styling for scrollbars */
+  ::-webkit-scrollbar {
+	width: 10px;
   }
   
-  /* You may also want to increase the weight of the text inside buttons and other important UI elements */
-  .todo-submit, .todo .delete {
-	font-weight: 700;
+  ::-webkit-scrollbar-track {
+	background: #0f0f0f;
   }
   
+  ::-webkit-scrollbar-thumb {
+	background: #33ff33;
+  }
+  
+  ::-webkit-scrollbar-thumb:hover {
+	background: #28cc28;
+  }
+
+  .bump {
+	background-color: #4CAF50; /* Green background */
+	color: white;
+	border: none;
+	border-radius: 4px;
+	padding: 5px 10px;
+	cursor: pointer;
+	margin-left: 10px; /* Add some space between bump and delete buttons */
+	transition: background-color 0.2s ease-in-out;
+  }
+  
+  .bump:hover {
+	background-color: #45a049;
+  }
+  
+  .bump:disabled {
+	background-color: #cccccc;
+	color: #666666;
+	cursor: not-allowed;
+  }
   

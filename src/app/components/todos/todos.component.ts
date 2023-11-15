@@ -7,7 +7,7 @@ import { Todo } from 'src/app/models/Todo';
   styleUrls: ['./todos.component.css']
 })
 export class TodosComponent implements OnInit{
-  title = 'TODOS!';
+  title = 'Todos!';
   todos!: Todo[];
   inputTodo:string =''
   constructor() {}
@@ -41,8 +41,12 @@ export class TodosComponent implements OnInit{
     this.inputTodo = "" // word doesnt stay at form
   }
 
-  bumpTodo () {
-    
+  bumpTodo(id: number) {
+    if (id > 0) { // Ensure we're not trying to bump the first item
+      // Swap the todo with the previous one
+      [this.todos[id], this.todos[id - 1]] = [this.todos[id - 1], this.todos[id]];
+    }
   }
+  
 
 }

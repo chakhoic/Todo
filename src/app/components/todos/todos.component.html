@@ -9,12 +9,16 @@
             class="todo-input"
             [(ngModel)]="inputTodo"
         />
-        <input type="submit" value="add todo" class="todo-submit">
+        <br>
+        <input type="submit" value="Add To Your List" class="todo-submit">
     </form>
+    <br><br>
     <div *ngFor="let todo of todos; let i=index;" class="todo {{ (todo.completed ? 'done' : '')}}">
         <div class="id"> {{ i+1 }} </div>
           <div class="content" (click)="toggleDone(i)">{{ todo.content }}</div>
-          <!-- <button class="bump" (click)="bumpTodo(0)">BUMP</button> -->
+          <button *ngIf="i > 0" class="bump" (click)="bumpTodo(i)">BUMP</button>
+          <!-- i === 0 so it doesnt keep going up -->
           <button class="delete" (click)="deleteTodo(i)">DELETE</button>
     </div>
+    <br>
 </div>
