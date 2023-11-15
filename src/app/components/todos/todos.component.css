@@ -151,3 +151,32 @@ background-color: #333; /* Dark grey to match the cyber theme */
 	cursor: not-allowed;
   }
   
+  .deleted-todo {
+	color: #ff6666; /* Or any other style you wish to apply */
+	/* Additional styles for the deleted tasks list */
+  }
+
+  .show-deleted-btn {
+	background-color: #4CAF50; /* Replace with your desired button color */
+	color: #ffffff; /* Replace with your desired text color */
+	padding: 10px 20px;
+	border: none;
+	border-radius: 4px;
+	cursor: pointer;
+	transition: background-color 0.2s ease-in-out;
+  }
+  
+  .show-deleted-btn:hover {
+	background-color: #45a049; /* A slightly darker shade for hover effect */
+  }
+
+  .button-container {
+	display: flex;
+	justify-content: center; /* This centers the button horizontally */
+	margin-top: 20px; /* Optional: adds some space above the button */
+	background-color: #1a1a1a; /* Dark background for the todo container */
+  }
+  
+  .show-deleted-btn {
+	margin: 0; /* Reset any margin on the button if necessary */
+  }

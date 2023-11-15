@@ -21,4 +21,13 @@
           <button class="delete" (click)="deleteTodo(i)">DELETE</button>
     </div>
     <br>
+    <div class="button-container">
+        <button class="show-deleted-btn" (click)="showDeleted()">Show Last 10 Deleted Tasks</button>
+      </div>
+        <div *ngIf="showDeletedTasks">
+        <div *ngFor="let deletedTodo of deletedTodos" class="deleted-todo">
+          {{ deletedTodo.content }}
+        </div>
+      </div>
+    <br>
 </div>
