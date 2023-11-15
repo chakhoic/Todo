@@ -24,6 +24,7 @@
     <div class="button-container">
         <button class="show-deleted-btn" (click)="showDeleted()">Show Last 10 Deleted Tasks</button>
       </div>
+      <br>
         <div *ngIf="showDeletedTasks">
         <div *ngFor="let deletedTodo of deletedTodos" class="deleted-todo">
           {{ deletedTodo.content }}
